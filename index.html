@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A modern and cool portfolio with a floating blurry sidebar" />
+    <title>My Portfolio</title>
+
+    <!-- Tailwind CSS is auto-injected with Vite, no need to link it manually -->
+
+    <!-- If you're using Google Fonts or any other fonts, you can link them here -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gray-900 text-white">
+
+    <!-- App Root Div (Where the React app gets rendered) -->
+    <div id="root"></div>
+
+    <!-- Vite Script to load your app (Automatically injected by Vite) -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <style>
+      /* Ensure the body takes full height and no scrollbar */
+      html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden; /* Hide the scrollbar completely */
+      }
+
+      /* Ensure the content area is scrollable */
+      .content {
+        overflow: auto; /* Enables scrolling within specific areas if needed */
+      }
+
+      /* Enable smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Responsive Layout (Sections) */
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .section {
+        width: 100%;
+        max-width: 1200px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Tailwind classes for responsiveness */
+      @media (min-width: 640px) {
+        .section {
+          padding: 3rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .section {
+          padding: 4rem;
+        }
+      }
+    </style>
+  </body>
+</html>

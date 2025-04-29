@@ -1,0 +1,155 @@
+/* Root Container with Gradient Background */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(45deg, #646cff, #ff6f61); /* Gradient colors */
+  background-size: 400% 400%; /* Make it flow smoothly */
+  animation: gradientBG 10s ease infinite; /* Animation to shift the gradient */
+  position: relative;
+  color: #fff; /* White text color for better contrast */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  background-color: #f0f0f0; /* Fallback background color */
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px); /* Subtle pattern */
+  background-size: 40px 40px; /* Adjust the pattern size */
+}
+
+/* Keyframe for gradient animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating particles effect */
+@keyframes particles {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #646cff;
+  border-radius: 50%;
+  animation: particles 5s ease-in-out infinite;
+  animation-delay: calc(-5s + 5 * random()); /* Random delay for different effects */
+}
+
+/* Logo Styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms ease;
+  max-width: 100%; /* Prevent logo from overflowing */
+  margin: 0 auto; /* Center the logo */
+}
+
+/* Logo Hover Effects */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa); /* Apply drop-shadow effect */
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa); /* Apply different color for React logo hover */
+}
+
+/* Logo Spin Animation */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for logo spin if user prefers reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card Component Styles */
+.card {
+  padding: 2em;
+  background-color: #1a1a1a; /* Ensuring the card has a background */
+  border-radius: 10px; /* Slight rounding of the corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for the card */
+  margin: 1rem; /* Add margin for better spacing */
+  width: 100%; /* Make card take full width on small screens */
+  max-width: 400px; /* Limit card width on large screens */
+  margin: 1.5rem auto; /* Center the card */
+}
+
+/* Styling for Read-The-Docs Links */
+.read-the-docs {
+  color: #888;
+  font-size: 0.875rem; /* Slightly smaller text */
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.read-the-docs:hover {
+  color: #646cff; /* Change color on hover for better interactivity */
+  text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem; /* Adjust padding on smaller screens */
+  }
+
+  .logo {
+    height: 4em; /* Scale down the logo on smaller screens */
+    padding: 1em; /* Reduce padding */
+  }
+
+  .card {
+    padding: 1.5em; /* Adjust padding on small screens */
+    width: 100%; /* Ensure card takes full width */
+    max-width: none; /* Remove max-width constraint on small screens */
+  }
+
+  /* Additional adjustments for smaller screens */
+  .read-the-docs {
+    font-size: 0.75rem; /* Smaller text size for read-the-docs links */
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  /* Further tweaks for very small devices */
+  .logo {
+    height: 3em; /* Make logo even smaller */
+    padding: 0.75em; /* Further reduce padding */
+  }
+
+  .card {
+    padding: 1rem; /* Reduce padding on extra small screens */
+  }
+
+  .read-the-docs {
+    font-size: 0.7rem; /* Even smaller text for links */
+  }
+}
